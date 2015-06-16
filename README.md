@@ -4,7 +4,7 @@ zabbix template to monitor bind9 named service
 # How to use (tested on CentOS7)
 the monitor script need to use zabbix-sender
 
-bash```
+```
 yum install zabbix-sender
 ```
 
