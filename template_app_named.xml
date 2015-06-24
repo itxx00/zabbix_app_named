@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2015-06-16T06:28:36Z</date>
+    <date>2015-06-24T07:59:21Z</date>
     <groups>
         <group>
             <name>DNS</name>
@@ -36,49 +36,6 @@
                     <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>named_dropped_query</key>
-                    <delay>0</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>1</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>Named</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>named_ipv4_request</name>
-                    <type>2</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>named_ipv4_request</key>
                     <delay>0</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -372,28 +329,6 @@ Check log of named</description>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template_App_Named:named_ipv4_request.last(0)}&gt;1000</expression>
-            <name>named: too many requests on {HOSTNAME}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description>too many requests&#13;
-perhaps named is under attack</description>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Template_App_Named:named_ipv4_request.last(0)}&gt;2000</expression>
-            <name>named: too many requests on {HOSTNAME}</name>
-            <url/>
-            <status>0</status>
-            <priority>4</priority>
-            <description>too many requests&#13;
-named is under attack</description>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
             <expression>{Template_App_Named:proc.num[named].last(0)}&lt;1</expression>
             <name>named is not running on {HOSTNAME}</name>
             <url/>
@@ -474,18 +409,6 @@ Check named</description>
                 </graph_item>
                 <graph_item>
                     <sortorder>4</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>FFCCFF</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>4</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template_App_Named</host>
-                        <key>named_ipv4_request</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>5</sortorder>
                     <drawtype>0</drawtype>
                     <color>FFFFCC</color>
                     <yaxisside>0</yaxisside>
